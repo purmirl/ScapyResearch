@@ -1,10 +1,10 @@
 """
  PeTrA's Scapy Research Laboratory 2020 ~
- Experiment
+ Copyrights 2020 PeTrA. All rights reserved
 
- Note
+ ICMP Example
 
-  01. (pip install scapy) or (pip install --pre scapy) in windows powershell or linux terminal
+ ICMP : Internet Control Message Protocol
 """
 
 from scapy.layers.inet import IP, ICMP
