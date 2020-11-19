@@ -6,17 +6,22 @@
 
   01. (pip install scapy) or (pip install --pre scapy) in windows powershell or linux terminal
 """
-from scapy.arch import get_if_list, route_add_loopback, get_windows_if_list
-from scapy.config import conf
-from scapy.layers.inet import IP, TCP
-from scapy.layers.l2 import Loopback
-from scapy.sendrecv import send, sendp, sr1
+
+from scapy.layers.inet import IP, UDP
+from scapy.packet import Raw
 
 # TCP
-from scapy.supersocket import L3RawSocket
+from scapy.sendrecv import send
 from scapy.volatile import RandShort
 
 
+destination_ip = "192.168.35.102"
+source_port = RandShort()
+destination_port = 22
+
+udp_packet = IP(dst = destination_ip) / UDP(dport = destination_port) / Raw(load = "abc")
+send(udp_packet)
+"""
 from scapy.layers.inet import IP, TCP
 from scapy.sendrecv import send
 from scapy.volatile import RandShort
@@ -30,3 +35,4 @@ tcp_packet = IP(dst = destination_ip) / TCP(sport = source_port, dport = destina
 tcp_packet.show()
 
 send(tcp_packet)
+"""
