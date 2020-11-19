@@ -21,10 +21,10 @@ from scapy.layers.inet import IP, TCP
 from scapy.sendrecv import send
 from scapy.volatile import RandShort
 
-destination_ip = ""
+destination_ip = "192.168.35.102"
 source_port = RandShort()
-destination_port = 864
-tcp_flags = "S" # U, A, P, R, S, F
+destination_port = 74
+tcp_flags = "F" # U, A, P, R, S, F
 
 tcp_packet = IP(dst = destination_ip) / TCP(sport = source_port, dport = destination_port, flags = tcp_flags)
 tcp_packet.show()
