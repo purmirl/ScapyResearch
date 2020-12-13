@@ -6,3 +6,7 @@
 
  HTTP : Hyper Text Transfer Protocol
 """
+
+# HTTP Request
+
+# HTTP Response
